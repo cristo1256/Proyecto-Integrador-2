@@ -1,6 +1,3 @@
-Aquí tienes tu **README completo listo para copiar y pegar**, usando tu carpeta **IMAGENES** y los nombres exactos de tus archivos.
-
----
 
 # RifaPlus - Aplicación de Rifa Digital en Flutter
 
@@ -343,7 +340,7 @@ class ConfirmScreen extends StatelessWidget {
 
 ### Home
 
-![Home](IMAGENES/1HOME.png)
+![Home](Imagenes/1HOME.png)
 
 ### Lista de Números
 
