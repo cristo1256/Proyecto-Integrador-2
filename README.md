@@ -344,19 +344,19 @@ class ConfirmScreen extends StatelessWidget {
 
 ### Lista de Números
 
-![Lista](IMAGENES/2NUMBERS.png)
+![Lista](Imagenes/2NUMBERS.png)
 
 ### Detalle del Número
 
-![Detalle](IMAGENES/3.png)
+![Detalle](Imagenes/3.png)
 
 ### Confirmación de Reserva
 
-![Confirmación](IMAGENES/4.png)
+![Confirmación](Imagenes/4.png)
 
 ### Vista adicional
 
-![Extra](IMAGENES/5.png)
+![Extra](Imagenes/5.png)
 
 ## Conclusión
 
