@@ -61,7 +61,7 @@ class _NumbersScreenState extends State<NumbersScreen> {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: reservado ? Colors.white : Color(0xFF0A1F44),
+                      color: reservado ? Colors.white : Color.fromARGB(255, 61, 41, 239),
                     ),
                   ),
                 ),
