@@ -19,25 +19,25 @@ class _NumbersScreenState extends State<NumbersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de números'),
+        title: Text('Selecciona tu número'),
       ),
-      body: ListView.builder(
-        itemCount: numeros.length,
-        itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              title: Text('Número ${numeros[index]["numero"]}'),
-              subtitle: Text(
-                numeros[index]["reservado"]
-                    ? 'Reservado'
-                    : 'Disponible',
-              ),
-              trailing: Icon(Icons.arrow_forward),
+      body: Padding(
+        padding: EdgeInsets.all(10),
+        child: GridView.builder(
+          itemCount: numeros.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            childAspectRatio: 1.1,
+          ),
+          itemBuilder: (context, index) {
+            bool reservado = numeros[index]["reservado"];
+
+            return GestureDetector(
               onTap: () async {
                 final result = await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DetailScreen(
+                    builder: (_) => DetailScreen(
                       numero: numeros[index]["numero"],
                     ),
                   ),
@@ -49,9 +49,26 @@ class _NumbersScreenState extends State<NumbersScreen> {
                   });
                 }
               },
-            ),
-          );
-        },
+              child: Card(
+                color: reservado ? Colors.grey : Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                elevation: 4,
+                child: Center(
+                  child: Text(
+                    numeros[index]["numero"],
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: reservado ? Colors.white : Color(0xFF0A1F44),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
